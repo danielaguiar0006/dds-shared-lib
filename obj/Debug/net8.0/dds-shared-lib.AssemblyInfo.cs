@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dds-shared-lib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad0cb3b15e870151656605550ee3d8ad0c1bdb4b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d730852f90d3b2f5de484efe4ae969d29215605")]
 [assembly: System.Reflection.AssemblyProductAttribute("dds-shared-lib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dds-shared-lib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

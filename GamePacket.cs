@@ -27,7 +27,7 @@ namespace dds_shared_lib
         }
 
         // Serialize the packet data into a byte array
-        // NOTE: Make sure to call PrefixWithProtocolID() before sending the packet
+        // NOTE: Make sure to prefix the protocol ID before sending the packet
         public override void Write(BinaryWriter writer)
         {
             writer.Write((byte)m_PacketType);
@@ -41,7 +41,7 @@ namespace dds_shared_lib
         {
             // Reading the packet Protocol ID & Packet Type are done in the NetworkManager.cs
             m_OpCode = (OpCode)reader.ReadByte();
-            ushort dataLength = reader.ReadUInt16();
+            int dataLength = reader.ReadInt32();
             m_Data = reader.ReadBytes(dataLength);
         }
     }

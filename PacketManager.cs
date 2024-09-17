@@ -8,6 +8,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
+using System.Buffers.Binary;
 
 
 namespace dds_shared_lib
@@ -22,8 +23,12 @@ namespace dds_shared_lib
             {
                 using (BinaryWriter writer = new BinaryWriter(memoryStream))
                 {
-                    packet.PrefixWithProtocolID(writer, protocolId);
-                    packet.Write(writer);
+                    //byte[] protocolIdBytes = new byte[4];
+                    //BinaryPrimitives.WriteUInt32BigEndian(protocolIdBytes, protocolId);
+                    //writer.Write(protocolIdBytes);
+
+                    writer.Write(protocolId); // Prefix with protocol ID
+                    packet.Write(writer);     // Write the packet data
                     byte[] serializedPacketData = memoryStream.ToArray();
 
                     if (remoteEndpoint == null)
@@ -50,7 +55,7 @@ namespace dds_shared_lib
                     if (receivedProtocolId != protocolId)
                     {
 #if GODOT
-                    GD.PrintErr("[ERROR] Invalid protocol ID: " + receivedProtocolId);
+                        GD.PrintErr("[ERROR] Invalid protocol ID: " + receivedProtocolId);
 #else
                         Console.WriteLine("[ERROR] Invalid protocol ID: " + receivedProtocolId);
 #endif
@@ -72,7 +77,7 @@ namespace dds_shared_lib
                             return playerPacket;
                         default:
 #if GODOT
-                        GD.PrintErr("[ERROR] Invalid packet type: " + packetType);
+                            GD.PrintErr("[ERROR] Invalid packet type: " + packetType);
 #else
                             Console.WriteLine("[ERROR] Invalid packet type: " + receivedProtocolId);
 #endif

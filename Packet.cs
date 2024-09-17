@@ -15,13 +15,6 @@ namespace dds_shared_lib
 
         // Deserialize the packet data from a byte array
         public abstract void Read(BinaryReader reader);
-
-        // NOTE: This is not done automatically and the Network Manager or Server must call this
-        public void PrefixWithProtocolID(BinaryWriter writer, uint protocolId)
-        {
-            writer.Seek(0, SeekOrigin.Begin);
-            writer.Write(protocolId);
-        }
     }
 }
 
