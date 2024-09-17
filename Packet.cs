@@ -8,7 +8,7 @@ namespace dds_shared_lib
             PlayerPacket,
         }
         public PacketType m_PacketType;
-        public byte[] m_Data;
+        public byte[]? m_Data;
 
         // Serialize the packet data into a byte array
         public abstract void Write(BinaryWriter writer);

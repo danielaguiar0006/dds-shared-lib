@@ -1,7 +1,3 @@
-using System;
-using System.IO;
-
-
 namespace dds_shared_lib
 {
     public class GamePacket : Packet
@@ -32,8 +28,15 @@ namespace dds_shared_lib
         {
             writer.Write((byte)m_PacketType);
             writer.Write((byte)m_OpCode);
-            writer.Write(m_Data.Length);
-            writer.Write(m_Data);
+            if (m_Data != null)
+            {
+                writer.Write(m_Data.Length);
+                writer.Write(m_Data);
+            }
+            else
+            {
+                writer.Write(0);
+            }
         }
 
         // Deserialize the packet data from a byte array
@@ -42,7 +45,14 @@ namespace dds_shared_lib
             // Reading the packet Protocol ID & Packet Type are done in the NetworkManager.cs
             m_OpCode = (OpCode)reader.ReadByte();
             int dataLength = reader.ReadInt32();
-            m_Data = reader.ReadBytes(dataLength);
+            if (dataLength > 0)
+            {
+                m_Data = reader.ReadBytes(dataLength);
+            }
+            else
+            {
+                m_Data = null;
+            }
         }
     }
 }

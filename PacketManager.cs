@@ -1,16 +1,13 @@
 #if GODOT
 using Godot;
-#else
-using System;
 #endif
 
-using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using System.Threading.Tasks;
-using System.Buffers.Binary;
 
 
+// Both the server and player clients share this PacketManager class to send and receive packets
+// NOTE: Both BinaryReader and BinaryWriter are little-endian so we don't need to worry about endianness
 namespace dds_shared_lib
 {
     public static class PacketManager
@@ -23,10 +20,6 @@ namespace dds_shared_lib
             {
                 using (BinaryWriter writer = new BinaryWriter(memoryStream))
                 {
-                    //byte[] protocolIdBytes = new byte[4];
-                    //BinaryPrimitives.WriteUInt32BigEndian(protocolIdBytes, protocolId);
-                    //writer.Write(protocolIdBytes);
-
                     writer.Write(protocolId); // Prefix with protocol ID
                     packet.Write(writer);     // Write the packet data
                     byte[] serializedPacketData = memoryStream.ToArray();
@@ -43,7 +36,6 @@ namespace dds_shared_lib
             }
         }
 
-#nullable enable
         public static Packet? GetPacketFromData(byte[] serializedPacketData, uint protocolId)
         {
             using (MemoryStream memoryStream = new MemoryStream(serializedPacketData))

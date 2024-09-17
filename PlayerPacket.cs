@@ -1,6 +1,3 @@
-using System.IO;
-
-
 namespace dds_shared_lib
 {
     public class PlayerPacket : Packet
