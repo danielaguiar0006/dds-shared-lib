@@ -1,0 +1,12 @@
+/home/reign/dev/work/dds-shared-lib/bin/Debug/net8.0/dds-shared-lib.deps.json
+/home/reign/dev/work/dds-shared-lib/bin/Debug/net8.0/dds-shared-lib.dll
+/home/reign/dev/work/dds-shared-lib/bin/Debug/net8.0/dds-shared-lib.pdb
+/home/reign/dev/work/dds-shared-lib/obj/Debug/net8.0/dds-shared-lib.GeneratedMSBuildEditorConfig.editorconfig
+/home/reign/dev/work/dds-shared-lib/obj/Debug/net8.0/dds-shared-lib.AssemblyInfoInputs.cache
+/home/reign/dev/work/dds-shared-lib/obj/Debug/net8.0/dds-shared-lib.AssemblyInfo.cs
+/home/reign/dev/work/dds-shared-lib/obj/Debug/net8.0/dds-shared-lib.csproj.CoreCompileInputs.cache
+/home/reign/dev/work/dds-shared-lib/obj/Debug/net8.0/dds-shared-lib.sourcelink.json
+/home/reign/dev/work/dds-shared-lib/obj/Debug/net8.0/dds-shared-lib.dll
+/home/reign/dev/work/dds-shared-lib/obj/Debug/net8.0/refint/dds-shared-lib.dll
+/home/reign/dev/work/dds-shared-lib/obj/Debug/net8.0/dds-shared-lib.pdb
+/home/reign/dev/work/dds-shared-lib/obj/Debug/net8.0/ref/dds-shared-lib.dll

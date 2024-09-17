@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/reign/dev/work/godotsharp-dungeon-doom-souls/scripts/networking/dds-shared-lib/dds-shared-lib/dds-shared-lib.csproj",
+      "projectUniqueName": "/home/reign/dev/work/dds-shared-lib/dds-shared-lib.csproj",
       "projectName": "dds-shared-lib",
-      "projectPath": "/home/reign/dev/work/godotsharp-dungeon-doom-souls/scripts/networking/dds-shared-lib/dds-shared-lib/dds-shared-lib.csproj",
+      "projectPath": "/home/reign/dev/work/dds-shared-lib/dds-shared-lib.csproj",
       "packagesPath": "/home/reign/.nuget/packages/",
-      "outputPath": "/home/reign/dev/work/godotsharp-dungeon-doom-souls/scripts/networking/dds-shared-lib/dds-shared-lib/obj/",
+      "outputPath": "/home/reign/dev/work/dds-shared-lib/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/reign/.nuget/NuGet/NuGet.Config"
@@ -38,6 +38,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -59,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/app/lib/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
