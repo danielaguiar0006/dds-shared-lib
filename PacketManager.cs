@@ -6,8 +6,6 @@ using System.Net;
 using System.Net.Sockets;
 
 
-using PlayerId = System.UInt16;
-
 // Both the server and player clients share this PacketManager class to send and receive packets
 // NOTE: Both BinaryReader and BinaryWriter are little-endian so we don't need to worry about endianness
 namespace dds_shared_lib

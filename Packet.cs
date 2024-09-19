@@ -1,7 +1,5 @@
 namespace dds_shared_lib
 {
-    using PlayerId = System.UInt16;
-
     public abstract class Packet
     {
         public enum PacketType
