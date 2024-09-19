@@ -56,9 +56,6 @@ namespace dds_shared_lib
                         return null;
                     }
 
-                    // Read the sender ID
-                    PlayerId senderId = reader.ReadUInt16();
-
                     // Read the packet type
                     Packet.PacketType packetType = (Packet.PacketType)reader.ReadByte();
 
@@ -67,12 +64,10 @@ namespace dds_shared_lib
                     {
                         case Packet.PacketType.GamePacket:
                             GamePacket gamePacket = new GamePacket();
-                            gamePacket.m_SenderId = senderId; // Manually setting the sender ID
                             gamePacket.Read(reader);
                             return gamePacket;
                         case Packet.PacketType.PlayerPacket:
                             PlayerPacket playerPacket = new PlayerPacket();
-                            playerPacket.m_SenderId = senderId; // Manually setting the sender ID
                             playerPacket.Read(reader);
                             return playerPacket;
                         default:
