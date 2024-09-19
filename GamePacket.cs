@@ -13,6 +13,10 @@ namespace dds_shared_lib
         }
         public OpCode m_OpCode;
 
+        public GamePacket()
+        {
+            m_PacketType = PacketType.GamePacket;
+        }
         public GamePacket(OpCode opCode, PlayerId senderId)
         {
             m_PacketType = PacketType.GamePacket;
