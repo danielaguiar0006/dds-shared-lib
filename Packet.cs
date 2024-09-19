@@ -1,5 +1,7 @@
 namespace dds_shared_lib
 {
+    using PlayerId = System.UInt16;
+
     public abstract class Packet
     {
         public enum PacketType
@@ -8,6 +10,7 @@ namespace dds_shared_lib
             PlayerPacket,
         }
         public PacketType m_PacketType;
+        public PlayerId m_SenderId;
         public byte[]? m_Data;
 
         // Serialize the packet data into a byte array

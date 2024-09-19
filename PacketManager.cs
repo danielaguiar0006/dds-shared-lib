@@ -6,6 +6,8 @@ using System.Net;
 using System.Net.Sockets;
 
 
+using PlayerId = System.UInt16;
+
 // Both the server and player clients share this PacketManager class to send and receive packets
 // NOTE: Both BinaryReader and BinaryWriter are little-endian so we don't need to worry about endianness
 namespace dds_shared_lib
@@ -54,17 +56,23 @@ namespace dds_shared_lib
                         return null;
                     }
 
+                    // Read the sender ID
+                    PlayerId senderId = reader.ReadUInt16();
+
                     // Read the packet type
                     Packet.PacketType packetType = (Packet.PacketType)reader.ReadByte();
+
                     // Create the appropriate packet based on the packet type
                     switch (packetType)
                     {
                         case Packet.PacketType.GamePacket:
                             GamePacket gamePacket = new GamePacket();
+                            gamePacket.m_SenderId = senderId; // Manually setting the sender ID
                             gamePacket.Read(reader);
                             return gamePacket;
                         case Packet.PacketType.PlayerPacket:
                             PlayerPacket playerPacket = new PlayerPacket();
+                            playerPacket.m_SenderId = senderId; // Manually setting the sender ID
                             playerPacket.Read(reader);
                             return playerPacket;
                         default:
